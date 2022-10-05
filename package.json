@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "server": "file:server"
+  },
+  "devDependencies": {
+    "cypress": "^10.8.0"
+  }
+}
