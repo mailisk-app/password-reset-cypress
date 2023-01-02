@@ -7,7 +7,7 @@ module.exports = defineConfig({
     },
   },
   env: {
-    MAILISK_API_KEY: "YOUR_API_KEY",
-    MAILISK_NAMESPACE: "YOUR_NAMESPACE",
+    MAILISK_API_KEY: "SwG8AkjAMKpkaiPADkWGFqDtof0xvUz_1o80_eqmnS4",
+    MAILISK_NAMESPACE: "5tp17s0n30y5",
   },
 });
