@@ -15,15 +15,15 @@ npm --prefix ./app install ./app
 
 ## Setup
 
-### Get SMTP Credentials
+### Get namespace and api key
 
-In order for the backend to send emails you will need to get your [SMTP Credentials](https://docs.mailisk.com/smtp.html).
+The Api Key and namespace can be found in your dashboard. See the [Getting Started](https://docs.mailisk.com) guide for detailed steps
 
-Once you have the username and password create a `.env` file in the root project directory. Add the following lines from your settings:
+Create a `.env` file in the root project directory. Add the following lines from your settings:
 
 ```ini
-SMTP_USER=<yournamespace@mailisk.net>
-SMTP_PASSWORD=<password>
+API_KEY=<api key>
+NAMESPACE=<yournamespace>
 ```
 
 ### Setup Cypress env
