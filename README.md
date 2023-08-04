@@ -2,7 +2,7 @@
 
 This is an example app that shows how to use Cypress to test password reset functionality. It uses [Mailisk](https://mailisk.com) and it's [Cypress library](https://github.com/mailisk-app/cypress-mailisk).
 
-This example includes a simple full stack React (NestJS) and Express application. The Express server uses [Mailisk SMTP](https://mailisk.com/blog/blog/smtp-now-available) to send emails, these emails can only be sent to an address that ends in `@{namespace}.mailisk.net`.
+This example includes a simple full stack React (NextJS) and Express application. The Express server uses [Mailisk SMTP](https://mailisk.com/blog/blog/smtp-now-available) to send emails, these emails can only be sent to an address that ends in `@{namespace}.mailisk.net`.
 
 ## Install packages
 
