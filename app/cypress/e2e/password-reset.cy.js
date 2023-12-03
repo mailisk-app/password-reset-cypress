@@ -29,7 +29,11 @@ describe("Test password reset", () => {
     // mailiskSearchInbox will automatically keep retrying until an email matching the prefix arrives
     // by default it also has a from_timestamp that prevents older emails from being returned by accident
     // find out more here: https://docs.mailisk.com/guides/cypress.html#usage
-    cy.mailiskSearchInbox(Cypress.env("MAILISK_NAMESPACE"), { to_addr_prefix: testEmailAddress }).then((response) => {
+    cy.mailiskSearchInbox(
+      Cypress.env("MAILISK_NAMESPACE"),
+      { to_addr_prefix: testEmailAddress, subject_includes: "password" },
+      { timeout: 1000 * 60 }
+    ).then((response) => {
       const emails = response.data;
       const email = emails[0];
       resetLink = email.text.match(/.*\[(http:\/\/localhost:3000\/.*)\].*/)[1];

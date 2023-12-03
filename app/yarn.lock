@@ -949,10 +949,10 @@ cssesc@^3.0.0:
   resolved "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
-cypress-mailisk@^1.0.0:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/cypress-mailisk/-/cypress-mailisk-1.0.4.tgz"
-  integrity sha512-UtAwCpw6WUK5D5du8sdxAWwZ9fPdIRruMzl/QJ3LLmfh+l9dxovR3NJBNI5iiRENcIvy4q3XglIq1r4mO6ktbA==
+cypress-mailisk@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/cypress-mailisk/-/cypress-mailisk-2.0.0.tgz"
+  integrity sha512-CJXnusDa/HJ5+4n3RjDryiI5WhX9ihpkJieHZh3ScR+TWQUE7HcvWAIEZe6nZgmngCvgcMDYyVHwbRCohl2ygA==
 
 cypress@^10.9.0, "cypress@>= 2.1.0":
   version "10.9.0"
