@@ -12,6 +12,8 @@ describe("Test password reset", () => {
   });
 
   it("Should login as user", () => {
+    cy.visit("http://localhost:3000/");
+
     cy.get("#email").type(testEmailAddress);
     cy.get("#password").type("password");
     cy.get("form").submit();
@@ -21,6 +23,7 @@ describe("Test password reset", () => {
 
   it("Should reset password", () => {
     cy.visit("http://localhost:3000/forgot");
+
     cy.get("#email").type(testEmailAddress);
     cy.get("form").submit();
     // this will send an email with a reset link to the provided email address
@@ -29,11 +32,10 @@ describe("Test password reset", () => {
     // mailiskSearchInbox will automatically keep retrying until an email matching the prefix arrives
     // by default it also has a from_timestamp that prevents older emails from being returned by accident
     // find out more here: https://docs.mailisk.com/guides/cypress.html#usage
-    cy.mailiskSearchInbox(
-      Cypress.env("MAILISK_NAMESPACE"),
-      { to_addr_prefix: testEmailAddress, subject_includes: "password" },
-      { timeout: 1000 * 60 }
-    ).then((response) => {
+    cy.mailiskSearchInbox(Cypress.env("MAILISK_NAMESPACE"), {
+      to_addr_prefix: testEmailAddress,
+      subject_includes: "password",
+    }).then((response) => {
       const emails = response.data;
       const email = emails[0];
       resetLink = email.text.match(/.*\[(http:\/\/localhost:3000\/.*)\].*/)[1];
@@ -43,6 +45,7 @@ describe("Test password reset", () => {
 
   it("Should visit reset link and set new password", () => {
     cy.visit(resetLink);
+
     cy.get("#new-password").type("newpassword");
     cy.get("form").submit();
     // if the reset was successful we should be redirected to the login screen
@@ -50,6 +53,8 @@ describe("Test password reset", () => {
   });
 
   it("Should login as user with new password", () => {
+    cy.visit("http://localhost:3000/");
+
     cy.get("#email").type(testEmailAddress);
     cy.get("#password").type("newpassword");
     cy.get("form").submit();
